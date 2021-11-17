@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>...</title>
+</head>
+<body>
+    <!-- Begin navigation fragments -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="header">
+        <a class="navbar-brand" href="http://nighthawkcodingsociety.com/">
+            <img src="/static/images/ncs_logo.png" th:src="@{/images/ncs_logo.png}" width="50" height="50" class="d-inline-block align-center" alt="">
+            Del Norte Food Ordering Service
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Bootstrap menus -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <!--root menu -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarPBL" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        PBL
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/greet">Greet</a>
+                        <a class="dropdown-item" href="/birds">Birds</a>
+                        <a class="dropdown-item" href="/dne">404 error</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarTPT" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        TPT
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" th:href="@{/sanvipal_javaref.pdf}" target="_blank" rel="noopener noreferrer">Journal</a>
+                        <a class="dropdown-item" href="https://freekashmir.nighthawkcodingsociety.com/" target="_blank" rel="noopener noreferrer">AP units</a>
+                        <a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2006 FRQ</a>
+                        <a class="dropdown-item" href="https://drone.nighthawkcodingsociety.com/ap-lessons/interface-abstraction-FRQ" target="_blank" rel="noopener noreferrer">2019 FRQ</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/yajatabout">Yajat Yadav</a>
+                        <a class="dropdown-item" href="/kyleabout">Kyle Myint</a>
+                        <a class="dropdown-item" href="/devamabout">Devam Shrivastava</a>
+                        <a class="dropdown-item" href="/floraabout">Flora Yuan</a>
+                        <a class="dropdown-item" href="/harryabout">Harry Li</a>
+                        <a class="dropdown-item" href="/factorial">Factorial</a>
+                        <a class="dropdown-item" href="/ourwebsite">Our Website</a>
+                        <a class="dropdown-item" href="/binary">Binary Website</a>
+                        <a class="dropdown-item" href="/images">Images Grayscale</a>
+                        <a class="dropdown-item" href="/user-form">Test Website</a>
+                    </div>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarTPT" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Modeling
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/yajatmodeling">Yajat Yadav</a>
+                        <a class="dropdown-item" href="/kylemodeling">Kyle Myint</a>
+                        <a class="dropdown-item" href="/devammodeling">Devam Shrivastava</a>
+                        <a class="dropdown-item" href="/floramodeling">Flora Yuan</a>
+                        <a class="dropdown-item" href="/harrymodeling">Harry Li</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarTPT" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Algorithm Lab
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/yajat_factorial">Yajat Yadav</a>
+                        <a class="dropdown-item" href="/kylealgorithm">Kyle Myint</a>
+                        <a class="dropdown-item" href="/devamalgorithm">Devam Shrivastava</a>
+                        <a class="dropdown-item" href="/floraalgorithm">Flora Yuan</a>
+                        <a class="dropdown-item" href="/harrylalgorithm">Harry Li</a>
+                    </div>
+                </li>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarAbout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/menu">Menu</a>
+                        <a class="dropdown-item" href="/order">webOrder</a>
+                        <a class="dropdown-item" href="/status">Status</a>
+                    </div>
+                </li>
+            </ul>
+            <!-- Clock display -->
+            <div>
+                <span id="clock"></span>
+            </div>
+            <!-- Dark mode action -->
+            <div class="custom-control custom-switch">
+                <input type="checkbox" onclick="darkFunction()" class="custom-control-input" id="darkSwitch">
+                <label class="custom-control-label" for="darkSwitch"></label>
+            </div>
+            <!-- Navigation bar JavaScript support -->
+            <script>
+                // Dark Mode Toggle
+                function darkFunction() {
+                    let element = document.body;
+                    element.classList.toggle("dark-mode");
+                }
+                // Clock controller
+                let clockElement = document.getElementById('clock');
+                function clock() {
+                    let date = new Date();
+                    clockElement.textContent = date.toLocaleString();
+                }
+                // Clock refresh frequency
+                setInterval(clock, 1000);
+            </script>
+        </div>
+    </nav>
+    <!-- Begin navigation fragments -->
+</body>
+</html>

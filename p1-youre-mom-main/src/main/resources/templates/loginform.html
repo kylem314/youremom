@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        #position10{
+            margin:auto;
+            border:none;
+            width:300px;
+            top:0%;
+            position:absolute;
+            right: 20%;
+            text-align:center;
+            line-height:10px;
+        }
+        .info{
+            position:absolute;
+            top:100%;
+            width:100%;
+            background-color:gray;
+            margin:auto;
+            border:none;
+            text-align:center;
+            line-height:7px;
+        }
+        #picture{
+            top:1%;
+            left:3%;
+            position:absolute;
+        }
+        .order1{
+            transition-duration:0.0s;
+            background-color: white;
+            border-style: solid;
+            border-color:black;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+
+        }
+        .order1:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            background-color:darkgray;
+            color:white;
+            border:none;
+        }
+        #position2{
+            top:5%;
+            left:25%;
+            position:absolute;
+        }
+        #position3{
+            top:5%;
+            position:absolute;
+            left:34%;
+        }
+        #position{
+            top:5%;
+            left:16%;
+            position: absolute;
+        }
+        .format{
+            background-color:white;
+            border:none;
+            text-decoration:none;
+            font-size:3px;
+            color:white;
+            top:0%;
+            right:0%;
+            position:absolute;
+            text-align:center;
+        }
+        .center{
+            top:20%;
+            left:50%;
+            position:absolute;
+            transform: translate(-50%, -0%);
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<div>
+    <img id="picture" src="/static/images/flower.jpg" th:src="@{/images/pusdlogo.png}" alt="menu" width="120px" height="120px" >
+    <a href="/help"><button class="format">Help</button></a>
+    <a href="/menu"><button class="order1" id="position2"> Order</button></a>
+    <!--    <a><button class="order1" id="position3">Future Lunch Schedules</button></a>
+    -->
+    <!--create this about us page later-->
+    <a href="/aboutus"><button class="order1" id="position3"> About Us</button></a>
+    <!--what other buttons should we add
+        gimme gimme suggestions-->
+    <a href="/ourwebsite"><button class="order1" id="position">Home</button></a>
+</div>
+
+<div class="center" style="width:250px; height:100px;">
+
+    <div style="text-align:center">
+        <h3>Welcome, Enter The Persons Details</h3>
+    </div>
+    <!-- ThymeLeaf allows person abject of the Class Person to be acted upon by the form
+     This is known as a “bean-backed form” or "form-backing bean".
+        th:object - the backend form object (bean object)
+     There are fields in the Person bean,  Get started with dialiects in 5 minutes -- https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html
+        th:field="*{name}"
+        th:field="*{age}"
+        th:field="*{dob}"
+     Each field has supporting line to show errors in validation
+        th:errors - form input errors added when validation errors occur
+     .-->
+    <form action="#"  method="POST"> <!--th:action="@{/data/personcreate}" th:object="${person}"-->
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input type="text"  /></td> <!--th:field="*{email}"-->
+                <!--<td  >EMail Error</td> th:if="${#fields.hasErrors('email')}" th:errors="*{email}"-->
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="text"  /></td> <!--th:field="*{name}"-->
+                <!--<td >Name Error</td> th:if="${#fields.hasErrors('name')}" th:errors="*{name}"-->
+            </tr>
+            <tr>
+                <td>Student ID:</td>
+                <td><input type="number"  /></td>  <!--th:field="*{dob}"-->
+                <!--<td>Birth Date Error</td> th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}"-->
+
+            </tr>
+            <tr>
+                <td><button type="submit" class="order1">Submit</button></td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</div>
+<div class="info">
+    <p>Developers:</p>
+    <p>Harry</p>
+    <p>Flora</p>
+    <p>Yajat</p>
+    <p>Devam</p>
+    <p>Kyle</p>
+    <div id="position10">
+        <p>Contact Flora for any problems,<br> <br>questions or concerns:</p>
+        <p> 858-265-8579</p>
+        <p> flora.yuan18@gmail.com</p>
+
+    </div>
+</div>
+</body>
+</html>

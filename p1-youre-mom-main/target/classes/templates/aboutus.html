@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About us</title>
+
+    <style>
+        * {box-sizing: border-box}
+        body {
+            font-family: Verdana, sans-serif;
+            margin:0;
+            overflow-x:hidden;
+
+        }
+        .order1{
+            transition-duration:0.0s;
+            background-color: white;
+            border-style: solid;
+            border-color:black;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+
+        }
+        .order1:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            background-color:darkgray;
+            color:white;
+            border:none;
+        }
+        .format{
+            background-color:white;
+            border:none;
+            text-decoration:none;
+            font-size:3px;
+            color:white;
+            top:0;
+            right:0;
+            position:absolute;
+            text-align:center;
+        }
+        #position2{
+            top:5%;
+            left:25%;
+            position:absolute;
+        }
+        #position{
+            top:5%;
+            left:16%;
+            position: absolute;
+        }
+        #position3{
+            top:5%;
+            position:absolute;
+            left:34%;
+        }
+        #picture{
+            top:1%;
+            left:3%;
+            position:absolute;
+        }
+        #position4{
+            top:65%;
+            left:10%;
+            position: absolute;
+            text-align:center;
+            border:none;
+            margin: auto;
+        }
+        #place{
+            width:100%;
+            position:absolute;
+            top:15%;
+            text-align:center;
+            border: none;
+            padding-right:25%;
+            padding-left:25%;
+            margin: auto;
+        }
+        .info{
+            position:absolute;
+           top:1200px;
+            width:100%;
+            background-color:gray;
+            margin:auto;
+            border:none;
+            text-align:center;
+            line-height:7px;
+        }
+        #position10{
+            margin:auto;
+            border:none;
+            width:300px;
+            top:0%;
+            position:absolute;
+            right: 20%;
+            text-align:center;
+            line-height:10px;
+        }
+
+        #right{
+            position:absolute;
+            right:10%;
+            top:50%;
+            border-bottom: forestgreen solid 30px;
+            border-right:forestgreen solid 30px;
+        }
+        .tincan{
+            height: 50px;
+            position:relative;
+            top:25%;
+        }
+        #login{
+            top:1%;
+            position:absolute;
+            display:flex;
+            justify-content: space-between;
+            width: 25%;
+            height: 15%;
+            right:5%;
+        }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Set a style for all buttons */
+        #log {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #log:hover {
+            opacity: 0.8;
+        }
+
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 0.6s;
+            animation: animatezoom 0.6s
+        }
+
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)}
+            to {-webkit-transform: scale(1)}
+        }
+
+        @keyframes animatezoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!--nav bar stuff-->
+<div>
+    <img id="picture" src="/static/images/flower.jpg" th:src="@{/images/pusdlogo.png}" alt="menu" width="120px" height="120px" >
+    <a href="/help"><button class="format">Help</button></a>
+    <a href="/menu"><button class="order1" id="position2"> Order</button></a>
+    <a href="/aboutus"><button class="order1" id="position3"> About Us</button></a>
+    <a href="/ourwebsite"><button class="order1" id="position">Home</button></a>
+</div>
+<div id="login">
+    <a href="/loginform"><button class="order1 tincan">Sign Up</button></a>
+    <button class="order1 tincan" onclick="document.getElementById('id01').style.display='block'" >Login</button>
+    <img src="/static/images/DNBeverages.jpg" th:src="@{/images/pfp.png}" alt="pfp" height="60px" width="60x" style="position:relative;top:25%;">
+</div>
+<div id="id01" class="modal">
+
+    <form class="modal-content animate"  method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="pfp.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label ><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label ><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button id="log" type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a>password?</a></span>
+        </div>
+    </form>
+</div>
+
+<!--words-->
+<div  id="place">
+    <h1>Who Are We</h1>
+    <p style="font-family: Georgia, serif; font-size:20px;">Del Norte Food Ordering Service is a platform<br>that revolutionizes the way students are able to buy lunch at school.<br>We do this by implementing our knowledge of Java and HTML, working to<br>bring ease and convenience to your lunch experience.</p>
+</div>
+
+<div  id="position4">
+    <h1>Reserving food for...</h1>
+    <h2 style="font-family: Georgia,serif; font-size:20px;">Students</h2>
+    <p style="font-family: Georgia,serif; font-size:20px;">With all your favorite lunch foods listed on our website,<br>Del Norte Food Ordering Service satisfies your cravings with<br>just a click of the button.</p>
+    <a href="/menu"><button class="order order1">Order Now</button> </a>
+</div>
+
+    <img src="/static/images/yummy.jpg" th:src="@{/images/happy.jpg}" alt="menu" id="right" height="600px" width="40%">
+
+
+<!--bottom stuff-->
+<div class="info">
+    <p>Developers:</p>
+    <p>Harry</p>
+    <p>Flora</p>
+    <p>Yajat</p>
+    <p>Devam</p>
+    <p>Kyle</p>
+    <div id="position10">
+        <p>Contact Flora for any problems,<br> <br>questions or concerns:</p>
+        <p> 858-265-8579</p>
+        <p> flora.yuan18@gmail.com</p>
+    </div>
+</div>
+</body>
+
+</html>

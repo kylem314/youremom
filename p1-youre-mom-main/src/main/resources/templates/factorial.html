@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+        <label for="fact_input">Enter a number </label>
+        <input name="user_input" id="fact_input">
+        <button onclick=factorial() id="button_1">Submit</button>
+
+
+
+<script type="text/javascript">
+
+   function factorial1(){
+    let num = parseInt(document.getElementById("fact_input").value)
+    let output = 1
+
+    while (num > 0) {
+        output = output * num
+        num -= 1
+    }
+    alert(parseInt(document.getElementById("fact_input").value) + "! is " + output)
+   }
+
+   function factorial2(){
+       let iterations = parseInt(document.getElementById("fact_input").value)
+   }
+
+</script>
+
+</body>
+</html>

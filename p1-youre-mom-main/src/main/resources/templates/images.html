@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <!-- Start of head content specific to page -->
+    <title>Images Grayscale</title>
+    <!-- End of head content specific to page -->
+</div></head>
+
+<body>
+    <div layout:fragment="content" th:remove="tag" style="height:100%;">
+       <table>
+        <tr th:each="image : ${image_list}">
+            <td>
+                <img th:src="${image}" height="500" width="500">
+            </td>
+
+        </tr>
+
+                <tr th:each = "gray_image : ${gray_image_list}">
+            <td>
+                <img th:src = "@{${gray_image}}" height = "500" width = "500">
+            </td>
+
+        </tr>
+       </table>
+<!--        th:src="@{/images/harryunfortunately.png}-->
+<!--        <img src="/static/images/yummy.jpg" th:src="@{/images/harryunfortunately.png}" alt="menu" height="auto" width="100%">-->
+
+
+    <!--
+    <div class="container">
+        <h1 class="text-center">RGB values within an Image</h1>
+        <p><small><a href="/image/grayscale">Grayscale</a></small></p>
+        <div class="row justify-content-md-center">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Meta Data</th>
+                    <th>Image</th>
+                    <th>Samples of Data</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="ii: ${lii}">
+                    <td>
+                        <div th:text="${ii.getFile()}">File name</div>
+                        <div th:text="'(' + ${ii.getHeight()} + ',' + ${ii.getWidth()} + ')'">Height,Width</div>
+                    </td>
+                    <td>
+                        <img class="img-responsive py-3" th:src="@{${ii.getFile()}}" alt="" src="${ii.getFile()}" width=128 height="Auto">
+                    </td>
+                    <td>
+                        <div class="overflow-auto" style="height: 256px">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Row</th>
+                                    <th>Column</th>
+                                    <th>RGB</th>
+                                    <th>Hex Code</th>
+                                    <th>Binary</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <span th:each="row: ${#numbers.sequence(0, ii.getScaled_height()-1)}">
+                                        <tr th:each="col: ${#numbers.sequence(0, ii.getScaled_width()-1)}">
+                                            <td th:text="${ii.getScaled_height(row)}">row</td>
+                                            <td th:text="${ii.getScaled_width(col)}">column</td>
+                                            <td th:text="${ii.getRGB(row,col)}">cell</td>
+                                            <td th:text="${ii.getHexCode(row,col)}">cell</td>
+                                            <td th:text="${ii.getBinary(row,col)}">cell</td>
+                                        </tr>
+                                    </span>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+-->
+<!--        <h1 class="text-center">Grayscale an Image</h1>-->
+<!--        <div id="size1">-->
+        <form name="grayscale" action = "/images" method="GET" id="conversion" class="center">
+            <input type="submit" id="convert" name="go" value="Convert!">
+        </form>
+        <div align="center">
+            <button type="button" name="grayscale" id="grayscale" class="btn btn-info">Grayscale</button>
+        </div>
+<!--    </div>-->
+
+
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th><img src="/static/images/yummy.jpg" th:src="@{/images/harryunfortunately.png}" alt="menu" height="auto" width="100%">-->
+<!--            </th>-->
+<!--            <th> new image</th>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--            <th><img src="/static/images/yummy.jpg" th:src="@{/images/harryunfortunately.png}" alt="menu" height="auto" width="100%">-->
+<!--            </th>-->
+<!--            <th> new image</th>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--            <th><img src="/static/images/yummy.jpg" th:src="@{/images/harryunfortunately.png}" alt="menu" height="auto" width="100%">-->
+<!--            </th>-->
+<!--            <th> new image</th>-->
+<!--        </tr>-->
+
+<!--    <table id="header">-->
+<!--        <tr>-->
+<!--            <th class="special">Grayscale</th>-->
+<!--            <th>hex</th>-->
+<!--            <th>decimal</th>-->
+<!--            <th>rgb</th>-->
+<!--            <th>base64</th>-->
+<!--            <th>binary</th>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--        <tr>-->
+<!--            <th><img src="/static/images/yummy.jpg" th:src="@{/images/harryunfortunately.png}" alt="menu" height="auto" width="100%">-->
+<!--            </th>-->
+<!--            <th> new image</th>-->
+<!--        </tr>-->
+
+<!--    </table>-->
+
+<!--        <div class="size" > &lt;!&ndash;restrict to left side&ndash;&gt;-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/harryunfortunately.png}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <a id="lol"><img src="/static/images/yummy.jpg" th:src="@{/images/Capture.PNG}" alt="menu" height="auto" width="100%"></a>-->
+<!--            <p id="lols"></p>-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/donuts.jpg}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/milk.jpeg}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/Mona_Lisa.png}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/mountain.jpg}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/yummy.jpg}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/cursed-meme.jpg}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/boku.jpg}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/noo.jpg}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+
+<!--        <div class="size">-->
+<!--            <img src="/static/images/yummy.jpg" th:src="@{/images/unnamed.jpg}" alt="menu" height="auto" width="100%">-->
+<!--        </div>-->
+<!--        <div>-->
+
+<!--        </div>-->
+
+
+        <style>
+            th.special{
+                width:auto;
+            }
+            th{
+                text-align:center;
+                width:15%;
+                border: solid 3px black
+            }
+            #header{
+                top:10px;
+                border:none;
+                width:100%;
+                position:relative;
+                height:40px;
+                left:20%;
+
+            }
+            .size{
+                position:relative;
+                width:20%;
+                border:none;
+                margin:0;
+                padding-top:10px;
+                padding-bottom: 15px;
+                height:auto;
+                top:10%;
+            }
+            #size1{
+                position:relative;
+                border:10px;
+                width:100%;
+                height:20px;
+            }
+          .center{
+              margin:0;
+              position:absolute;
+              top:50%;
+              left:50%;
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+          }
+            .text-center{
+                text-align:center;
+            }
+
+        </style>
+        <script>
+            document.getElementById("lol").onclick= function myFunction() {
+                document.getElementById("lols").innerHTML = "^this shit would lowkey scare me if it was the first thing i saw when I wake up";
+                setTimeout(function(){
+                    document.getElementById("lols").innerHTML = null ;
+                }, 3000);
+            }
+        </script>
+    </div>
+</body>
+<!--
+image info required
+    base64 encoding
+    RGB attributes
+        decimal
+        hexadecimal
+        binary
+
+----flow chart----
+button>process image>outputs attributes to table(hopefully) and grayscale image
+-->
+</html>

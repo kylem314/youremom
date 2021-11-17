@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Food Ordering Service</title>
+
+</head>
+<body>
+<script>
+    //function that display value
+    function dis(val)
+    {
+        document.getElementById("result").value+=val
+    }
+
+    //function that evaluates the digit and return result
+    function solve()
+    {
+        let x = document.getElementById("result").value
+        let y = eval(x)
+        document.getElementById("result").value = y
+    }
+
+    //function that clear the display
+    function clr()
+    {
+        document.getElementById("result").value = ""
+    }
+</script>
+
+<style>
+    th, tr {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    body{box-sizing: border-box}
+    body {
+        font-family: Verdana, sans-serif;
+        margin-top: 100px;
+        overflow-x:hidden;
+
+    }
+    .order1{
+        transition-duration:0.0s;
+        background-color: white;
+        border-style: solid;
+        border-color:black;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+
+    }
+    .order1:hover {
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        background-color:darkgray;
+        color:white;
+        border:none;
+    }
+    .format{
+        background-color:white;
+        border:none;
+        text-decoration:none;
+        font-size:3px;
+        color:white;
+        top:0%;
+        right:0%;
+        position:absolute;
+        text-align:center;
+    }
+    #position2{
+        top:5%;
+        left:25%;
+        position:absolute;
+    }
+    #position{
+        top:5%;
+        left:16%;
+        position: absolute;
+    }
+    #position3{
+        top:5%;
+        position:absolute;
+        left:34%;
+    }
+    #picture{
+        top:1%;
+        left:3%;
+        position:absolute;
+    }
+    .tincan{
+        height: 50px;
+        position:relative;
+        top:25%;
+    }
+    #login{
+        top:1%;
+        position:absolute;
+        display:flex;
+        justify-content: space-between;
+        width: 25%;
+        height: 15%;
+        right:5%;
+    }
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    #log {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    #log:hover {
+        opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+
+    img.avatar {
+        width: 40%;
+        border-radius: 50%;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)}
+        to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+        from {transform: scale(0)}
+        to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+
+    .title{
+        margin-top: 1100px;
+        text-align:center;
+        width: 210px;
+        color:black;
+        border: solid black 2px;
+    }
+
+    input[type="button"]
+    {
+        background-color:deepskyblue;
+        color: black;
+        border: solid black 2px;
+        width:100%
+    }
+
+    input[type="text"]
+    {
+        background-color:white;
+        border: solid black 2px;
+        width:100%
+    }
+</style>
+<div>
+    <img id="picture" src="/static/images/flower.jpg" th:src="@{/images/pusdlogo.png}" alt="menu" width="120px" height="120px" >
+    <a href="/help"><button class="format">Help</button></a>
+    <a href="/menu"><button class="order1" id="position2"> Order</button></a>
+    <a href="/aboutus"><button class="order1" id="position3"> About Us</button></a>
+    <a href="/ourwebsite"><button class="order1" id="position">Home</button></a>
+</div>
+<div id="login">
+    <a href="/loginform"><button class="order1 tincan">Sign Up</button></a>
+    <button class="order1 tincan" onclick="document.getElementById('id01').style.display='block'" >Login</button>
+    <img src="/static/images/DNBeverages.jpg" th:src="@{/images/pfp.png}" alt="pfp" height="60px" width="60x" style="position:relative;top:25%;">
+</div>
+<div id="id01" class="modal">
+
+    <form class="modal-content animate"  method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="pfp.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label ><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label ><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button id="log" type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a>password?</a></span>
+        </div>
+    </form>
+</div>
+
+<div style="position:absolute; top:150px;">
+<h1> Food Ordering Service</h1>
+    <table>
+        <tr>
+            <th>Preferred pickup location</th>
+            <th>
+                <select name="Location" id="Pickup_location" type="string">
+                <option selected="selected" value="Any">No Preference</option>
+                <option value="Cafeteria">Cafeteria</option>
+                <option value="Kiosk_1">Kiosk 1</option>
+                <option value="Kiosk_2">Kiosk 2</option>
+            </select>
+            </th>
+        </tr>
+    </table>
+
+<table>
+    <tr class="odd" bgcolor="#808080">
+        <th>Food</th>
+        <th>Price</th>
+        <th>Select</th>
+        <th>Total Price</th>
+    </tr>
+    <tr>
+        <th><img src="/static/images/pizza.jpg" th:src="@{/images/pizza.jpg}" style="width:200px;height:200px;"></th>
+        <th>Pizza Slice: $3.00</th>
+        <th>
+            <select name="Quantity" id="Quantity_pizza" type="number">
+                <option selected="selected" value="0">Quantity </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </th>
+        <th id="total_cost">Total Cost</th>
+    </tr>
+    <tr class="odd" bgcolor="#808080">
+        <th><img src="/static/images/milk.jpeg" th:src="@{/images/milk.jpeg}" style="width:200px;height:200px;"></th>
+        <th>Milk: $0.75</th>
+        <th>
+            <select name="Quantity" id="Quantity_milk" type="number">
+                <option selected="selected" value="0">Quantity </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </th>
+        <th> </th>
+    </tr>
+    <tr>
+        <th><img src="/static/images/burrito.jpg" th:src="@{/images/burrito.jpg}" style="width:200px;height:200px;"></th>
+        <th id="burrito_cost">Burrito: $2.50</th>
+        <th>
+            <select name="Quantity" id="Quantity_burrito" type="number">
+                <option selected="selected" value="0">Quantity </option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option>4</option>
+            </select>
+        </th>
+        <th><button id="checkout_button" onclick = get_cost(1,2,3)>Checkout</button></th>
+    </tr>
+</table>
+</div>
+<!--Tables are cool-->
+<script type = "text/javascript">
+    class food{
+        constructor(quantity, cost) {
+            this.quantity = quantity;
+            this.cost = cost;
+
+        }
+         TotalCost(){
+            return (this.quantity * this.cost);
+        }
+    }
+
+    document.getElementById("checkout_button").onclick = function(){
+        let pizza = new food(parseInt(document.getElementById("Quantity_pizza").options[document.getElementById("Quantity_pizza").selectedIndex].value), 3.00);
+        let milk = new food(parseInt(document.getElementById("Quantity_milk").options[document.getElementById("Quantity_milk").selectedIndex].value), 0.75);
+        let burrito = new food(parseInt(document.getElementById("Quantity_burrito").options[document.getElementById("Quantity_burrito").selectedIndex].value), 2.50);
+
+        var total_cost = pizza.TotalCost() + milk.TotalCost() + burrito.TotalCost();
+        total_cost = "$" + String(total_cost.toFixed(2));
+        document.getElementById("total_cost").innerHTML = total_cost;
+
+    };
+
+    </script>
+<a></a>
+<div class = title >Balance Calculator</div>
+<table border="1">
+    <tr>
+        <td colspan="3"><input type="text" id="result"/></td>
+        <!-- clr() function will call clr to clear all value -->
+        <td><input type="button" value="c" onclick="clr()"/> </td>
+    </tr>
+    <tr>
+        <!-- create button and assign value to each button -->
+        <!-- dis("1") will call function dis to display value -->
+        <td><input type="button" value="1" onclick="dis('1')"/> </td>
+        <td><input type="button" value="2" onclick="dis('2')"/> </td>
+        <td><input type="button" value="3" onclick="dis('3')"/> </td>
+        <td><input type="button" value="/" onclick="dis('/')"/> </td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4" onclick="dis('4')"/> </td>
+        <td><input type="button" value="5" onclick="dis('5')"/> </td>
+        <td><input type="button" value="6" onclick="dis('6')"/> </td>
+        <td><input type="button" value="-" onclick="dis('-')"/> </td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7" onclick="dis('7')"/> </td>
+        <td><input type="button" value="8" onclick="dis('8')"/> </td>
+        <td><input type="button" value="9" onclick="dis('9')"/> </td>
+        <td><input type="button" value="+" onclick="dis('+')"/> </td>
+    </tr>
+    <tr>
+        <td><input type="button" value="." onclick="dis('.')"/> </td>
+        <td><input type="button" value="0" onclick="dis('0')"/> </td>
+        <!-- solve function call function solve to evaluate value -->
+        <td><input type="button" value="=" onclick="solve()"/> </td>
+        <td><input type="button" value="*" onclick="dis('*')"/> </td>
+    </tr>
+</table>
+
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+</body>
