@@ -13,9 +13,9 @@ Week 1: 11/29-12/3
 
 Task | Link |
 ------ | ------ |
-Design | 
-Technicals |
+Design | [Link](https://github.com/kylem314/youremom/wiki/Project-Theme---Technicals)
+Technicals | [Link](https://github.com/kylem314/youremom/wiki/Project-Theme---Technicals)
 GitHub | [Link](https://github.com/kylem314/youremom/wiki/Contributing-Guidelines)
-Deployment | 
+Deployment | [Link](https://github.com/kylem314/youremom/wiki/Deployment)
 Scrum Board | [Link](https://github.com/kylem314/youremom/projects/1) |
 
