@@ -15,7 +15,7 @@ Task | Link |
 ------ | ------ |
 Design | 
 Technicals |
-GitHub | 
-Deployment |
-Scrum Board |
+GitHub | [Link](https://github.com/kylem314/youremom/wiki/Contributing-Guidelines)
+Deployment | 
+Scrum Board | [Link](https://github.com/kylem314/youremom/projects/1) |
 
