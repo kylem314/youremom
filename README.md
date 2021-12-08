@@ -11,7 +11,7 @@ Eric Wang | elw55555 | [Issues](https://github.com/kylem314/youremom/issues/assi
 
 Week 1: 11/29-12/3
 
-Task | Link |
+Task | Link  |
 ------ | ------ |
 Design | [Link](https://github.com/kylem314/youremom/wiki/Project-Theme---Technicals)
 Technicals | [Link](https://github.com/kylem314/youremom/wiki/Project-Theme---Technicals)
