@@ -1,6 +1,7 @@
-## Project Details
+# Welcome to You're Mom's College Application Service
 ![image](https://user-images.githubusercontent.com/72889453/144466953-1bacbbbb-7f55-4952-878a-0332df54cb2b.png)
 
+## Scrum Team Members and Contributions
 m221p1-youre-mom   | [Scrum Board](https://github.com/kylem314/p1-youre-mom/projects/1) | [Repo Contributors](https://github.com/kylem314/p1-youre-mom/graphs/contributors) | ------ | ------ | ------ |
 ------ | ------ | ------ | ------ | ------ | ------ |
 Name            | GitHub ID | Tasks | Scrum Board | Commits | Profile |
