@@ -3,13 +3,13 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
-<head><div layout:fragment="metadata" th:remove="tag">
+<head ><div layout:fragment="metadata" th:remove="tag">
     <!-- Start of head content specific to page -->
     <title>About Kyle M</title>
     <!-- End of head content specific to page -->
 </div></head>
 
-<body><div layout:fragment="content" th:remove="tag">
+<body ><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
 
     <p>Hello, this is Kyle's About page! </p>
@@ -77,4 +77,16 @@
     <!-- End of body content specific to page -->
 </div></body>
 
+
 </html>
+
+
+<style>
+    html,body{
+        display: grid;
+        height: 100%;
+        place-items: center;
+        text-align: center;
+        background: linear-gradient(#00FBDE, #F96F6F);
+    }
+</style>
