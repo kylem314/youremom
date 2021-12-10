@@ -23,7 +23,6 @@
     <groupId>com.example</groupId>
     <artifactId>serving-web-content</artifactId>
     <name>serving-web-content</name>
-    <description>Demo project for Spring Boot</description>
     <description>CSA project for Spring Boot</description>
 
     <properties>
