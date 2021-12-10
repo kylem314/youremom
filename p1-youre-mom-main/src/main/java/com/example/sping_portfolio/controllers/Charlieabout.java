@@ -34,7 +34,7 @@ class Charlieabout {
         model.addAttribute("name", name); // MODEL is passed to html
         return "charlieabout"; // returns HTML VIEW (greeting)
     }
-    @GetMapping("/about/kevin")
+    @GetMapping("/about/charlie")
     public String kevin(@RequestParam(name="artist", required=false, defaultValue="NOTD") String artist, Model model) throws IOException, InterruptedException, ParseException, JSONException {
 
         List<String> artistList = new ArrayList<String>();

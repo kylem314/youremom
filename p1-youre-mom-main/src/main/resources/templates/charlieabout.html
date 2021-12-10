@@ -6,7 +6,7 @@
 
 <head>
     <div layout:fragment="metadata" th:remove="tag">
-        <title>Kevin's Page</title>
+        <title>Charlie's Page</title>
     </div>
 </head>
 
@@ -17,9 +17,9 @@
 
     <div style="margin-left: 50px; margin-top: 50px; width:60%" class="row justify-content-around">
         <div><center>
-            <a title="click to toggle!" onclick="imageSwitch(1)"><img id="image1" style="display:none" th:src="@{/images/kevin-fried.jpg}" src="/static/images/kevin-fried.jpg" width="400px" height="400px"></a>
-            <a title="click to toggle!" onclick="imageSwitch(2)"><img id="image2" style="display:inline" th:src="@{/images/kevin.jpg}" src="static/images/kevin.jpg" width="400px" height="400px"></a>
-            <h1 style="" class="aboutName">KEVIN DO</h1>
+            <a title="click to toggle!" onclick="imageSwitch(1)"><img id="image1" style="display:none" th:src="@{/images/Charliesad.png}" src="/static/images/Charliesad.png" width="400px" height="400px"></a>
+            <a title="click to toggle!" onclick="imageSwitch(2)"><img id="image2" style="display:inline" th:src="@{/images/Charliehappy.png}" src="static/images/Charliehappy.png" width="400px" height="400px"></a>
+            <h1 style="" class="aboutName">Charlie Zhu</h1>
         </center></div>
         <div>
             <table class="miniTable">
@@ -36,8 +36,8 @@
             <hr style="background-color:var(--text)">
             <div>
                 <center>
-                    <p class="smallTitle">Genius API</p>
-                    <form action="/about/kevin" method="GET">
+                    <p class="smallTitle">Song API</p>
+                    <form action="/about/charlie" method="GET">
                         <label style="color:var(--text)" for="artistField">Search Genius</label>
                         <input id="artistField" name="artist" type="text">
                         <input type="submit">
@@ -225,4 +225,5 @@
     form .btn button:hover{
         background: #DEB887;
     }
+
 </style>
