@@ -41,7 +41,7 @@ class Charlieabout {
         return "charliefrq"; // returns HTML VIEW (greeting)
     }
     @GetMapping("/about/charlie")
-    public String kevin(@RequestParam(name="artist", required=false, defaultValue="Official HIDEDANDISM") String artist, Model model) throws IOException, InterruptedException, ParseException, JSONException {
+    public String charlie(@RequestParam(name="artist", required=false, defaultValue="Official HIDEDANDISM") String artist, Model model) throws IOException, InterruptedException, ParseException, JSONException {
 
         List<String> artistList = new ArrayList<String>();
         String [] a = artist.split(" ");

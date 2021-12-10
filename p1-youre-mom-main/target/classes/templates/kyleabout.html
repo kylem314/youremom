@@ -44,9 +44,37 @@
         </div>
     </div>
 
+    <div style="margin-left: 50px; margin-top: 50px; width:60%" class="row justify-content-around">
+        <div>
+            <a title="Click to Greyscale" onclick="imageSwitch(1)"><img id="image1" style="display:none" th:src="@{/images/bird.jpg}" src="/static/images/bird.jpg" width="400px" height="400px"></a>
+            <a title="Click to Revert" onclick="imageSwitch(2)"><img id="image2" style="display:inline" th:src="@{/images/bird2.png}" src="static/images/bird2.png" width="400px" height="400px"></a>
+        </div>
+    </div>
 
-</div>
-<!-- End of body content specific to page -->
+
+                <h2 class="sectionTitle">Unit 2 FRQ's</h2>
+                <div class="sectionText">
+                    <p>(a) </br>
+                        LightSequence gradShow = new LightSequence("0101 0101 0101");</br>
+                        (b)</br>
+                        gradShow.display();</br>
+                        (c)</br>
+                        gradShow.changeSequence("0011 0011 0011");</br>
+                        (d)</br>
+                        resultSeq = gradShow.insertSegment("1111 1111", 4);</br>
+                        (e)</br>
+                        int indexOfSegment = oldSeq.indexOf(segment);</br>
+                        String newSeq = oldSeq.substring(0, indexOfSegment) + oldSeq.substring(indexOfSegment + segment.length());</br>
+                        (f)</br>
+                        aSquared = a * a</br>
+                        bSquared = b * b</br>
+                        System.out.println(Math.sqrt(aSquared + bSquared));</br>
+                    </p>
+                </div>
+
+
+    </div>
+    <!-- End of body content specific to page -->
 </div></body>
 
 </html>
