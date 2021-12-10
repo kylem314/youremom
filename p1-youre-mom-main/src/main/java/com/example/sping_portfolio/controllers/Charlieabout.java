@@ -35,7 +35,7 @@ class Charlieabout {
         return "charlieabout"; // returns HTML VIEW (greeting)
     }
     @GetMapping("/about/charlie")
-    public String kevin(@RequestParam(name="artist", required=false, defaultValue="NOTD") String artist, Model model) throws IOException, InterruptedException, ParseException, JSONException {
+    public String kevin(@RequestParam(name="artist", required=false, defaultValue="Official HIDEDANDISM") String artist, Model model) throws IOException, InterruptedException, ParseException, JSONException {
 
         List<String> artistList = new ArrayList<String>();
         String [] a = artist.split(" ");
@@ -77,15 +77,15 @@ class Charlieabout {
         List<Map<String, String>> mapsList = new ArrayList<Map<String, String>>();
 
         HashMap<String, String> map1 = new HashMap<String, String>();
-        map1.put("Profile", "https://github.com/kevin-dough");
+        map1.put("Profile", "https://github.com/1855387");
         Map<String, String> map2 = new HashMap<String, String>();
-        map2.put("Issues", "https://github.com/wrachel/TaxEvaders/issues?q=assignee%3Akevin-dough");
+        map2.put("Issues", "https://github.com/kylem314/youremom/issues?q=assignee%3A1855387");
         Map<String, String> map3 = new HashMap<String, String>();
-        map3.put("Scrum Board", "https://github.com/wrachel/TaxEvaders/projects/1?card_filter_query=assignee%3Akevin-dough");
+        map3.put("Scrum Board", "https://github.com/kylem314/youremom/projects/1?card_filter_query=assignee%3A1855387");
         Map<String, String> map4 = new HashMap<String, String>();
-        map4.put("Commits", "https://github.com/wrachel/TaxEvaders/commits?author=kevin-dough");
+        map4.put("Commits", "https://github.com/kylem314/youremom/commits/master");
         Map<String, String> map5 = new HashMap<String, String>();
-        map5.put("Journal", "https://docs.google.com/document/d/16_k_1SHg_x8uD2hea02EN_f5rCSypD75EXhMNy_6yiI/edit?usp=sharing");
+        map5.put("Journal", "https://docs.google.com/document/d/1Cveew1hqk56At565Kp9DZfIZK5_nHjVgp2LFCoSyNSw/edit");
 
         mapsList.add(map1);
         mapsList.add(map2);
