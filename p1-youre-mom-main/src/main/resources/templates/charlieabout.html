@@ -1,0 +1,228 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head>
+    <div layout:fragment="metadata" th:remove="tag">
+        <title>Kevin's Page</title>
+    </div>
+</head>
+
+<!-- layout::fragment="content" is heart of ThymeLeaf layout -->
+<body>
+<div layout:fragment="content" th:remove="tag">
+    <!-- Start of body content specific to page -->
+
+    <div style="margin-left: 50px; margin-top: 50px; width:60%" class="row justify-content-around">
+        <div><center>
+            <a title="click to toggle!" onclick="imageSwitch(1)"><img id="image1" style="display:none" th:src="@{/images/kevin-fried.jpg}" src="/static/images/kevin-fried.jpg" width="400px" height="400px"></a>
+            <a title="click to toggle!" onclick="imageSwitch(2)"><img id="image2" style="display:inline" th:src="@{/images/kevin.jpg}" src="static/images/kevin.jpg" width="400px" height="400px"></a>
+            <h1 style="" class="aboutName">KEVIN DO</h1>
+        </center></div>
+        <div>
+            <table class="miniTable">
+                <thead>
+                <tr>
+                    <th:block th:each="map : ${mapsList}">
+                        <th:block th:each="mapEntry : ${map}">
+                            <td><a title="click me!" th:href="@{${mapEntry.value}}" target="_blank" th:text="${mapEntry.key}"></a></td>
+                        </th:block>
+                    </th:block>
+                </tr>
+                </thead>
+            </table>
+            <hr style="background-color:var(--text)">
+            <div>
+                <center>
+                    <p class="smallTitle">Genius API</p>
+                    <form action="/about/kevin" method="GET">
+                        <label style="color:var(--text)" for="artistField">Search Genius</label>
+                        <input id="artistField" name="artist" type="text">
+                        <input type="submit">
+                    </form>
+                    <div style="padding-top:20px">
+
+                        <img th:src="@{${song_art_url}}" width="200px" height="200px">
+                        <p style="color:var(--text);padding-top:15px" th:text="${song_name}"></p>
+
+                    </div>
+                </center>
+            </div>
+        </div>
+        <div style="color:var(--text)">
+            <h1 class="sectionTitle">FRQs</h1>
+            <ul>
+                <li>
+                    <a title="click to view page!" href="/kevin/unit2">Unit 2</a>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/wrachel/TaxEvaders/blob/main/src/main/java/com/project/passwordmanager/controllers/kevin/LightSequenceController.java" target="_blank">Controller</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/wrachel/TaxEvaders/blob/main/src/main/java/com/project/passwordmanager/controllers/kevin/LightSequence.java" target="_blank">Model</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function imageSwitch(type)
+        {
+            if(type===1) {
+                document.getElementById('image1').style.display = 'none';
+                document.getElementById('image2').style.display = 'inline';
+            }
+
+            if(type===2) {
+                document.getElementById('image2').style.display = 'none';
+                document.getElementById('image1').style.display = 'inline';
+            }
+        }
+    </script>
+    <!-- end of body content specific to page -->
+</div>
+</body>
+</html>
+</html>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    html,body{
+        display: grid;
+        height: 100%;
+        place-items: center;
+        text-align: center;
+        background: #DEB887;
+    }
+    .container{
+        position: relative;
+        width: 400px;
+        background: #DEB887;
+        padding: 20px 30px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .container .post{
+        display: none;
+    }
+    .container .text{
+        font-size: 25px;
+        color: #666;
+        font-weight: 500;
+    }
+    .container .edit{
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-size: 16px;
+        color: #666;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    .container .edit:hover{
+        text-decoration: underline;
+    }
+    .container .star-widget input{
+        display: none;
+    }
+    .star-widget label{
+        font-size: 40px;
+        color: #444;
+        padding: 10px;
+        float: right;
+        transition: all 0.2s ease;
+    }
+    input:not(:checked) ~ label:hover,
+    input:not(:checked) ~ label:hover ~ label{
+        color: #fd4;
+    }
+    input:checked ~ label{
+        color: #fd4;
+    }
+    input#rate-5:checked ~ label{
+        color: #fe7;
+        text-shadow: 0 0 20px #952;
+    }
+    #rate-1:checked ~ form header:before{
+        content: "Immediate update needed! ";
+    }
+    #rate-2:checked ~ form header:before{
+        content: "Lacks some features or is a little too buggy. ";
+    }
+    #rate-3:checked ~ form header:before{
+        content: "It's alright, nothing too special.";
+    }
+    #rate-4:checked ~ form header:before{
+        content: "Pretty good, but I wish there was one more thing.";
+    }
+    #rate-5:checked ~ form header:before{
+        content: "It's perfect! ";
+    }
+    .container form{
+        display: none;
+    }
+    input:checked ~ form{
+        display: block;
+    }
+    form header{
+        width: 100%;
+        font-size: 25px;
+        color: #fe7;
+        font-weight: 500;
+        margin: 5px 0 20px 0;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    form .textarea{
+        height: 100px;
+        width: 100%;
+        overflow: hidden;
+    }
+    form .textarea textarea{
+        height: 100%;
+        width: 100%;
+        outline: none;
+        color: #eee;
+        border: 1px solid #333;
+        background: #DEB887;
+        padding: 10px;
+        font-size: 17px;
+        resize: none;
+    }
+    .textarea textarea:focus{
+        border-color: #444;
+    }
+    form .btn{
+        height: 45px;
+        width: 100%;
+        margin: 15px 0;
+    }
+    form .btn button{
+        height: 100%;
+        width: 100%;
+        border: 1px solid #444;
+        outline: none;
+        background: #DEB887;
+        color: #999;
+        font-size: 17px;
+        font-weight: 500;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    form .btn button:hover{
+        background: #DEB887;
+    }
+</style>
