@@ -15,7 +15,7 @@
     <!-- Start of body content specific to page -->
     <p style = "font-size: 30px; color:#FF0000;"> Hello, this is Yajat's About Me Page. A fun fact about me is that my birthday falls on pi day!</p>
 
-<!--    formula to find weekday used from https://cs.uwaterloo.ca/~alopez-o/math-faq/node73.html-->
+    <!--    formula to find weekday used from https://cs.uwaterloo.ca/~alopez-o/math-faq/node73.html-->
     <script type="text/javascript">
         function birthday(){
             var month = parseInt(document.getElementById("month").value);
@@ -54,9 +54,43 @@
         </div>
     </div>
 
+    <p>
+        <img alt="" src="https://www.w3schools.com/images/lamp.jpg"
+             style="height: 85px; width: 198px" id="imagetochange" />
+    </p>
 
+
+    <div>
+        <!--            <label>What answer did you get?</label>-->
+        <!--            <input name="name2" id="Question" placeholder="Question">-->
+        <button onclick = "image_switch()" id="button2">Click to Grayscale the Image</button>
+        <!-- test 4 -->
     </div>
-    <!-- End of body content specific to page -->
+
+
+    <script type="text/javascript">
+        function image_switch(){
+            if(document.getElementById("imagetochange").style.filter == ""){
+                document.getElementById("imagetochange").style.filter = "grayscale(100%)";
+            }
+            else{
+
+                document.getElementById("imagetochange").style.filter = ""
+
+            }
+        }
+
+
+    </script>
+
+    <a href="yajat_frq.html">Yajat's FRQs</a>
+    <a href="kyleabout.html">Test FRQs</a>
+
+
+
+</div>
+<!-- End of body content specific to page -->
 </div></body>
 
 </html>
+
