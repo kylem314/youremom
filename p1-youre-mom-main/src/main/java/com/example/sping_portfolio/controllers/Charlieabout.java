@@ -29,10 +29,16 @@ import org.json.*;
 @Controller  // HTTP requests are handled as a controller, using the @Controller annotation
 class Charlieabout {
     @GetMapping("/charlieabout")    // CONTROLLER handles GET request for /greeting, maps it to greeting() and does variable bindings
-    public String harry_about(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+    public String charlie_about(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         // @RequestParam handles required and default values, name and model are class variables, model looking like JSON
         model.addAttribute("name", name); // MODEL is passed to html
         return "charlieabout"; // returns HTML VIEW (greeting)
+    }
+    @GetMapping("/charliefrq")    // CONTROLLER handles GET request for /greeting, maps it to greeting() and does variable bindings
+    public String charlie_frq(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+        // @RequestParam handles required and default values, name and model are class variables, model looking like JSON
+        model.addAttribute("name", name); // MODEL is passed to html
+        return "charliefrq"; // returns HTML VIEW (greeting)
     }
     @GetMapping("/about/charlie")
     public String kevin(@RequestParam(name="artist", required=false, defaultValue="Official HIDEDANDISM") String artist, Model model) throws IOException, InterruptedException, ParseException, JSONException {
