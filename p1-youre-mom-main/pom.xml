@@ -2,17 +2,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+        <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>     
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.code</groupId>
-    <artifactId>coders</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>coders</name>
+    <groupId>com.example</groupId>
+    <artifactId>serving-web-content</artifactId>
+    <name>serving-web-content</name>
+    <description>Demo project for Spring Boot</description>
     <description>CSA project for Spring Boot</description>
+
     <properties>
         <java.version>11</java.version>
         <!-- Thymeleaf 3 -->
@@ -20,7 +33,9 @@
         <org.thymeleaf.extras.springsecurity4-version>3.0.2.RELEASE</org.thymeleaf.extras.springsecurity4-version>
         <nz.net.ultraq.thymeleaflayout-version>2.3.0</nz.net.ultraq.thymeleaflayout-version>
         <thymeleaf-extras-java8time-version>3.0.1.RELEASE</thymeleaf-extras-java8time-version>
-    </properties>
+         <maven.compiler.source>9</maven.compiler.source>
+        <maven.compiler.target>9</maven.compiler.target>
+         </properties>
     <dependencies>
         <!-- Spring -->
         <dependency>
@@ -88,6 +103,9 @@
             <version>${thymeleaf-extras-java8time-version}</version>
         </dependency>
         <dependency>
+            <groupId>com.vaadin.external.google</groupId>
+            <artifactId>android-json</artifactId>
+            <version>0.0.20131108.vaadin1</version>
             <groupId>xml-apis</groupId>
             <artifactId>xml-apis</artifactId>
             <version>1.4.01</version>
